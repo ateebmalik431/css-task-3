@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport - Logistics Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO SLIDER SECTION -->
+    <section class="hero" id="home">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1 id="heroTitle">
+                WE MAKE STRONGEST<br>
+                SERVICE ABOVE THE WORLD
+            </h1>
+
+            <p id="heroText">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                We provide the best transportation and logistics services
+                around the world.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#services" class="btn">OUR SERVICE</a>
+                <a href="mailto:info@example.com?subject=Get%20a%20Quote"
+                   class="btn">GET A QUOTE</a>
+            </div>
+        </div>
+
+        <div class="slider-buttons">
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+
+        <div class="container">
+
+            <div class="service-card">
+
+                <img
+                src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=700&q=85"
+                alt="Ocean Freight">
+
+                <div class="icon">♟</div>
+
+                <h3>OCEAN FREIGHT</h3>
+
+                <p>
+                    It is a long established fact that a reader
+                    will be distracted by the readable content
+                    of a page when looking at its layout.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Maritime_transport"
+                   target="_blank" class="read-btn">Read More</a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <img
+                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=85"
+                alt="Air Freight">
+
+                <div class="icon">✈️</div>
+
+                <h3>AIR FREIGHT</h3>
+
+                <p>
+                    It is a long established fact that a reader
+                    will be distracted by the readable content
+                    of a page when looking at its layout.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Air_cargo"
+                   target="_blank" class="read-btn">Read More</a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <img
+                src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=700&q=85"
+                alt="Street Freight">
+
+                <div class="icon">🚚</div>
+
+                <h3>STREET FREIGHT</h3>
+
+                <p>
+                    It is a long established fact that a reader
+                    will be distracted by the readable content
+                    of a page when looking at its layout.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Road_transport"
+                   target="_blank" class="read-btn">Read More</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <h2>NEED TRANSPORTATION SERVICES?</h2>
+        <p>Contact us today for the best logistics solutions.</p>
+        <a href="mailto:info@example.com?subject=Transport%20Service%20Inquiry"
+           class="contact-btn">CONTACT US</a>
+    </section>
+
+
+    <!-- SLIDER JAVASCRIPT -->
+    <script>
+
+        const slides = [
+
+            {
+                image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1800&q=90",
+                title: "WE MAKE STRONGEST<br>SERVICE ABOVE THE WORLD",
+                text: "We provide the best ocean transportation and worldwide shipping services."
+            },
+
+            {
+                image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1800&q=90",
+                title: "FASTEST AIR FREIGHT<br>AROUND THE WORLD",
+                text: "Our air freight services deliver your goods safely and quickly."
+            },
+
+            {
+                image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=90",
+                title: "RELIABLE ROAD<br>TRANSPORT SERVICES",
+                text: "We connect cities and countries with reliable road transportation."
+            }
+
+        ];
+
+        let currentSlide = 0;
+
+        const hero = document.querySelector(".hero");
+        const heroTitle = document.getElementById("heroTitle");
+        const heroText = document.getElementById("heroText");
+
+        function showSlide(index) {
+
+            currentSlide = (index + slides.length) % slides.length;
+
+            hero.style.backgroundImage =
+                url("${slides[currentSlide].image}");
+
+            heroTitle.innerHTML = slides[currentSlide].title;
+            heroText.textContent = slides[currentSlide].text;
+
+        }
+
+        document.getElementById("nextBtn").addEventListener("click", function() {
+            showSlide(currentSlide + 1);
+        });
+
+        document.getElementById("prevBtn").addEventListener("click", function() {
+            showSlide(currentSlide - 1);
+        });
+
+        showSlide(0);
+
+    </script>
+
+</body>
+</html>
